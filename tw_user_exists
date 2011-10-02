@@ -1,0 +1,17 @@
+#! /bin/bash
+
+TWusername="$1"
+
+if [ "$TWUSERNAME" == "" ]; then
+	exit 1;
+fi
+
+response=$(curl --write-out %{http_code} --silent --output /dev/null https://api.twitter.com/1/users/show.xml?screen_name=$TWUSERNAME)
+
+echo $response
+
+if [ "$response" == "200" ]; then
+	exit 0;
+fi
+
+exit 1;

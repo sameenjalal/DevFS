@@ -1,0 +1,16 @@
+#! /bin/bash
+
+
+read -p "Login:" TWUSERNAME
+
+if [ "$TWUSERNAME" == "" ]; then
+	exit 1
+fi
+
+read -s -p "Password:" drowssap
+
+if [ "$drowssap" == "" ]; then
+	exit 1
+fi
+
+export $TWUSERNAME

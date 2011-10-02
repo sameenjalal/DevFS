@@ -1,0 +1,5 @@
+#! /bin/bash
+
+lsPython="twitter-ls.py"
+
+python $lsPython $@

@@ -1,0 +1,7 @@
+#! /bin/bash
+
+UserExists=""
+
+if [ "`python  $UserExists`" == "0" ]; then
+		
+fi

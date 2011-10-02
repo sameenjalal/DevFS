@@ -1,0 +1,58 @@
+#! /bin/bash
+
+TWLOGIN="twlogin"
+TWLOGOUT="twlogout"
+TWLS="twls"
+TWCD="twcd"
+TWPWD="twpwd"
+TWPULL="twpull"
+TWECHO="twecho"
+
+function usage {
+	echo -e "\nTwitterFS - Twitter CLI meets \"File System\""
+	echo -e "-h\t\tHelp menu"
+	echo -e "login\t\tLogin as User"
+	echo -e "logout\t\tLogout as logged in user"
+	echo -e "ls, status [username]\t\tShow tweets of current user you are in"
+	echo -e "pwd\t\tShow your current working directory"
+	echo -e "cd\t\tChange directory"
+#	echo -e "pull, update\tUpdate cache"
+	echo -e "echo, tweet \"tweet\"\t\tTweet!"
+
+	echo ""
+	echo "Useful Stuff!"
+	echo "$0 echo \"Whats up broski? How's Baby Joanna doing? \> <username>\""
+}
+
+if [ "$#" == "0" ]; then
+	usage
+fi
+
+CMD="$1"
+shift
+case $CMD in
+	login)
+		$TWLOGIN $@
+		;;
+	logout)
+		$TWLOGOUT $@
+		;;
+	ls|status)
+		$TWLS $@
+		;;
+	pwd)
+		$TWPWD $@
+		;;
+	cd)
+		$TWCD $@
+		;;
+#	pull|update)
+#		$TWPULL $@
+#		;;
+	echo|tweet)
+		$TWECHO  $@
+		;;
+	*)
+		usage
+		;;
+esac
