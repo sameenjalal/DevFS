@@ -1,5 +1,16 @@
 #! /bin/bash
 
+
+# Python should take one argument. A username of the current user you want to describe!
 lsPython="twitter-ls.py"
 
-python $lsPython $@
+if [ "$TWCWD" == "" ]; then
+	if [ "$TWUSERNAME" == "" ]; then
+		echo "Are you logged in broski?!"
+		exit 1
+	fi
+	export TWCWD="$TWUSERNAME"
+fi
+
+
+python $lsPython $TWCWD

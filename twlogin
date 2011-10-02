@@ -1,7 +1,15 @@
 #! /bin/bash
 
-UserExists=""
+read -p "Login:" TWUSERNAME
 
-if [ "`python  $UserExists`" == "0" ]; then
-		
+if [ "$TWUSERNAME" == "" ]; then
+	exit 1
 fi
+
+read -s -p "Password:" drowssap
+
+if [ "$drowssap" == "" ]; then
+	exit 1
+fi
+
+export $TWUSERNAME

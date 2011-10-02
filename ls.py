@@ -16,11 +16,11 @@ count = sys.argv[2]
 var = "http://twitter.com/status/user_timeline/" + username + ".json?count=" + str(count)
 
 r=requests.get(var)
-
 random_thing = json.loads(r.content)
 x=0
-#while (x < count):
-ran_string=random_thing[1]['created_at']
-print(ran_string[4:16]+" " +random_thing[1]['text'])
-
+#while (x < sys.argv[2]):
+for x in random_thing:
+    ran_string=x['created_at']
+    print(ran_string[4:16]+" " +x['text'])
+    
 

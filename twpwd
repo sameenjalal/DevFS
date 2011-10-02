@@ -1,0 +1,10 @@
+#! /bin/bash
+
+twitter_cwd="$TWCWD"
+
+if [ "$twitter_cwd" == "" ]; then
+	echo "Broski, log in! We don't know you are!"
+	exit 1
+fi
+
+echo "/TwitterFS/${twitter_cwd}/"
