@@ -31,6 +31,6 @@ r= urllib2.Request(url="https://twitter.com/sessions?phx=1?",data=url_data, head
 response = urllib2.urlopen(r)
 #print type( (str)(response.read()) )
 #print response
-#print urllib2.urlopen(url="http://twitter.com/#!/samjalal").read()
+print urllib2.urlopen(url="http://twitter.com/#!/samjalal").read()
 
-buf = BytesIO(
+#buf = BytesIO(
